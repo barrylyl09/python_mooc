@@ -11,7 +11,3 @@ elif val[-1] in ['F','f']:
     print("转换后的温度为：%.2fC"%c)
 else:
     print("输入有误")
-
-
-# print("helloworld");
-# print("helloworld_test");
