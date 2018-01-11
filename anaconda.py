@@ -9,6 +9,18 @@ import turtle
 # turtle：外部库 绘制图像
 
 def drawSnake(rad, angle, len, neckrad):
+
+    '''
+    :param rad:描述圆形轨迹半径的位置，正数：turtle 左侧    负数：turtle 右侧
+    :param angle: 表示 turtle 沿着圆形爬行的弧度值
+    :param len:
+    :param neckrad:
+    :return:
+
+    turtle.circle->让 turtle 沿着圆形轨迹爬行
+    turtle.fd()函数也可称为 turtle.forward()函数 ->表示 turtle 向前直线爬行移动，它有个参数表示爬行的距离
+    '''
+
     for i in  range(len):
         turtle.circle(rad, angle)
         turtle.circle(-rad, angle)
@@ -23,20 +35,7 @@ def main():
     turtle.pensize(pythonsize)      #运行轨迹宽度：30
     turtle.pencolor("blue")         #运行轨迹颜色为：蓝色
     turtle.seth(180)                #turtle 启动时的运行的方向 ：角度值 （北：90 南：270 西：180 东：0）负数代表相反方向
-    drawSnake(40,80,5,pythonsize/2) #调用 drawSnake函数
+    drawSnake(40,80,1,pythonsize/2) #调用 drawSnake函数
 
 main()
 
-'''
-val = input("请输入带温度表示符号的温度值（例如：32C）:")
-
-if val[-1] in ['C','c']:
-    f = 1.8 * float(val[0:-1]) + 32
-    print("转换后的温度为: %.2fF"%f)
-elif val[-1] in ['F','f']:
-    c = (float(val[0:-1]) - 32) / 1.8
-    print("转换后的温度为：%.2fC"%c)
-else:
-    print("输入有误")
-
-'''
