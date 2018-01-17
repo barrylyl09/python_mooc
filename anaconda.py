@@ -19,6 +19,7 @@ def drawSnake(rad, angle, len, neckrad):
 
     turtle.circle->让 turtle 沿着圆形轨迹爬行
     turtle.fd()函数也可称为 turtle.forward()函数 ->表示 turtle 向前直线爬行移动，它有个参数表示爬行的距离
+
     '''
 
     # for i in  range(len):
