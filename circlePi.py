@@ -1,4 +1,4 @@
-
+#encoding:utf-8
 
 
 import math
@@ -9,6 +9,7 @@ import random
 
 简单说，蒙特卡洛是利用随机试验求解问题的方法。
 
+python circlePi.py > MonteCarlo.txt  保存结果进指定文件
 
 '''
 

@@ -1,3 +1,4 @@
+#encoding:utf-8
 # Python学习手册_第四版 (课后习题)
 
 '''
@@ -34,6 +35,7 @@ Python 代码运行起来速度接近 C，因为在 Python 解释器中调用链
 
 '''
 
+
 '''
 第二章：
 
@@ -63,3 +65,12 @@ Python 代码运行起来速度接近 C，因为在 Python 解释器中调用链
 它们都是 Python 的编译器的替代实现。
 
 '''
+
+import  sys
+
+print(sys.platform)
+print(2 ** 100)
+x = 'Spam!'
+print (x * 8)
+y = input()
+print ('y')
