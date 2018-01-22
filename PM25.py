@@ -2,9 +2,8 @@
 
 
 def main():
-    # PM = eval(input("What is today's PM2.5?"))
-    PM = 23
-    print ('PM = %s',PM)
+    PM = input("What is today's PM2.5? Please input:\n")
+    print 'PM = '+str(PM)
     #打印相应的提醒
     if PM > 75:
         print ("Unhealthy. Be careful!")
