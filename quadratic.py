@@ -13,7 +13,7 @@ def main():
         x = -b / (2 * a)
         print ("\nThere is a double root at", x)
     else:
-        print (heihei)
+        print ("计算两个实方根")
 
 
 main()
