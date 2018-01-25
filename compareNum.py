@@ -48,6 +48,7 @@ def void3():
     a, b, c = input("Please enter digits:(a, b, c) \n")
 
     temp = a
+    max = 'a'
     if b > temp:
         max = 'b'
     if c > temp:
@@ -56,4 +57,4 @@ def void3():
     print '最大数值是：' + str(max)
 
 
-
+void3()
