@@ -21,7 +21,7 @@ def main():
     except SyntaxError:
         print("\nYour input was not in the correct from. Missing comma?")
     except:
-        print("\nSomething went wrong, sorry!"）
+        print("\nSomething went wrong, sorry!")
 
 main()
 
