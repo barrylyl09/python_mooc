@@ -7,8 +7,6 @@ def main():
         a, b, c = input("Please enter the cofficients (a, b, c): \n")
         discRoot = math.sqrt(b * b - 4 * a * c)
         root1 = (-b + discRoot) / (2 * a)
-<<<<<<< HEAD
-=======
         root2 = (-b - discRoot) / (2 * a)
         print("\nThe solutions are:", root1, root2)
     except ValueError as excObj:
@@ -26,4 +24,4 @@ def main():
         print("\nSomething went wrong, sorry!"）
 
 main()
->>>>>>> d76b42cce8f3905d611e74af4a2a199eebcfd34b
+
