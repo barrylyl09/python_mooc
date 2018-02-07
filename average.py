@@ -23,7 +23,7 @@ def void2():
         
 
 # 哨兵循环
-def sentry():
+def sentry1():
     sum = 0.0
     count = 0
     x = input("Enter a number (negative to quit) >> ")
@@ -32,5 +32,30 @@ def sentry():
         count = count + 1
         x = input ("Enter a number (negative to quit) >>")
     print ("\nThe average of the numbers is", sum/count)
+
+
+def sentry2():
+    sum = 0.0
+    count = 0
+    xStr = input("Enter a number (<Enter> to quit) >>")
+    while xstr != "":
+        x = xstr
+        sum = sum + x
+        count = count + 1
+        xStr = input("Enter a number (<Enter> to quit) >>")
+    print ("\nThe average of the numbers is", sum / count)
+
+# 文件循环代码
+def sentry3():
+    fileName = input("What file are the numbers in? ")
+    infile = open(fileName, 'r')
+    sum = 0
+    count = 0
+    for line in infile:
+        sum = sum + eval(line)
+        count = count + 1
+    print ("\nThe average of the numbers is", sum / count)
+
+
 
 void1()
