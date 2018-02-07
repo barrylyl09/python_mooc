@@ -45,7 +45,7 @@ def sentry2():
         xStr = input("Enter a number (<Enter> to quit) >>")
     print ("\nThe average of the numbers is", sum / count)
 
-# 文件循环代码
+# 文件循环代码 for
 def sentry3():
     fileName = input("What file are the numbers in? ")
     infile = open(fileName, 'r')
@@ -56,6 +56,18 @@ def sentry3():
         count = count + 1
     print ("\nThe average of the numbers is", sum / count)
 
+# 文件循环代码 while
+def sentry4():
+    fileName = input("What file are the numbers in? ")
+    infile = open(fileName, 'r')
+    sum = 0.0
+    count = 0
+    line = infile.readline()
+    whie line != "":
+        sum = sum + line
+        count = count + 1
+        line = infile.readline()
 
+    print ("\nThe average of the numbers is ",sum / count)
 
 void1()
