@@ -1,0 +1,103 @@
+#Chapter3
+
+##3-1.标识符。为什么Python中不需要变量名和变量类型声明？
+答案：Python语言中对象的类型和内存都是运行时确定的。在创建也就是赋值时，解释器会根据语法和右侧的操作数来决定新对象的类型。
+因为变量在第一次赋值的时候就被自动声明了。Python是无类型的语言。
+Python既是动态类型语言(因为它不使用显示数据类型声明，在运行期间才去确定数据类型)，
+又是强类型语言(因为只要一个变量获得了一个数据，它就一直就是这个数据的数据类型)。
+
+##3-2.标识符。为什么Python中不需要声明函数类型？
+答案：函数没有定义返回的数据类型。Python不需要指定返回值的数据类型；甚至不需要指定是否有返回值。
+实际上，每个Python函数都返回一个值；如果函数执行过return语句，它将返回指定的值，否则将返回None(Python的空值)。
+
+
+##3-3.标识符。为什么应当避免在变量名的开始和结尾使用双下划线？
+答案：因为变量名__xxx__对Python来说有特殊含义，对于普通的变量应当避免这种命名风格。
+
+##3-4.语句。在Python中一行可以书写多个语句吗？
+答案：可以
+
+##3-5.语句。在Python中可以将一个语句分成多行书写吗？
+答案：可以
+
+##3-6.变量赋值。  （a）赋值语句x, y, z = 1, 2, 3会在x、y、z中分别赋什么值？ （b）执行z, x, y = y, z, x后，x、y、z中分别含有什么值？
+答案：  (a)x = 1, y = 2, z = 3 (b)x = 3, y = 1, z = 2
+
+##3-7.标识符。下面哪些是Python合法的标识符？如果不是，请说明理由。在合法的标识符中，哪些是关键字？
+int32            40XL            $aving$            printf            print _print           this              self
+__name__      0X40L bool             true              big-daddy        2hot2touch    type thisIsn'tAVar  thisIsAVar
+R_U_Ready       Int                True  if                 do               counter-1         access           -
+答案：  Python标识符字符串规则和其他大部分用C便携的高级语言相似：  第一个字符必须是字母或下划线'_'；剩下的字符可以是字母数字或下划线；大小写敏感。
+int32、printf、_print、this、self、__name__、bool、true、type、thisIsAVar、R_U_Ready、Int、True、do、access是Python合法的标识符。
+print、if是Python合法的标识符且是关键字。  40XL、$aving$、0X40L、big-daddy、2hot2touch、thisIsn'tAVar、counter-1、-不是Python合法的标示符。
+
+##3-8.Python代码。将脚本拷贝到你的文件系统中，然后修改它。可以添加注释，修改提示符（‘>’太单调了）等，修改这些代码，使他们看上去更舒服。
+答案：略
+
+##3-9.移植。如果你在不同类型的计算机系统中分别安装有Python，检查一下，os.linesep的值是否有不同。记下操作系统的类型及linesep的值。
+答案：  Python 2.7.11 (v2.7.11:6d1b6a68f775, Dec  5 2015, 20:32:19) [MSC v.1500 32 bit (Intel)] on win32  Type "copyright",
+"credits" or "license()" for more information. >>> import os >>> os.linesep '\r\n'   linux系统没有，略。
+
+##3-10.异常。使用类似readTextFile.py中异常处理的方法取代makeTextFile.py中对 os.path.exists()的调用。反过来，
+用os.path.exists()取代readTextFile.py中的异常处理方法。 答案：后续补上   3-11.字符串格式化。不再抑制readTextFile.py中print语句生成的NEWLINE字符，
+修改你的代码，在显示一行之前删除每行末尾的空白。这样，你就可以移除print语句末尾的逗号了。提示：使用字符串对象的strip()方法。
+答案：
+#/usr/bin/env python
+'readTextFile.py -- read and display text file'
+# get filename
+fname = raw_input("Enter filename: ")
+print
+# attempt to open file for reading
+try:
+    fobj = open(fname,'r')
+except IOError,e:
+    print "*** file open error:", e
+else:
+    # display contents to the screen
+    for eachLine in fobj:
+        print eachLine.strip()
+    fobj.close()
+
+
+##3-12.合并源文件。将两段程序合并成一个，给它起一个你喜欢的名字，比如readNwriteTextFiles.py。让用户自己选择是创建还是显示一个文本文件。
+答：
+#!/usr/bin/env python
+#_*_coding:utf8_*_
+
+import os
+ls = os.linesep
+
+#get filename
+while True:
+      print '''
+      1.makeTextFile
+      2.readTextFile
+      3.quit  '''
+
+      choose = raw_input('请输入操作代码: '.decode("utf-8").encode("gbk"))
+      if int(choose) == 1:
+            while True:
+                fname = raw_input('请输入要创建的文件名: '.decode("utf-8").encode("gbk"))
+                if os.path.exists(fname):
+                    print "ERROR: '%s' already exists" % fname
+                else:
+                    break
+
+      #get file content (text) Lines
+           all_list = []
+           """原著上使用了all做list，但是在使用eclipse是发现有assignment to reserved built-in symbol:all的warning,所以就使用all_list"""
+           #all = []
+           print "\nEnter lines ('.' by itself to quit).\n"
+
+           #loop until user terminates input
+           while True:
+                 entry = raw_input('> ')
+                 if entry == '.':
+                     break
+                 else:
+                     all_list.append(entry)
+           #write lines to file with proper line-ending
+           fobj = open(fname,'w')
+           fobj.writelines(['%s%s' % (x,ls) for x in all_list])
+           fobj.close()
+           print 'DONE!'

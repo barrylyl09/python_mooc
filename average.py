@@ -70,4 +70,12 @@ def sentry4():
 
     print ("\nThe average of the numbers is ",sum / count)
 
+'''
+
+def <name>(<parameters>):
+    <body>
+
+'''
+
+
 void1()
