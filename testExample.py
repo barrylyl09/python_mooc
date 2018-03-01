@@ -88,9 +88,8 @@ def void6():
     sys.stdout.close()
     sys.stdout = temp
 
-void6()
 
-
+void3()
 
 
 
