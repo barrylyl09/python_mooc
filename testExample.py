@@ -1,5 +1,6 @@
 #encoding:utf-8
 
+import sys
 
 
 def void1():
@@ -77,9 +78,17 @@ def void5():
     a = b = c = 'spam'
     print a, b, c
 
+def void6():
+    print 'sys = ' + str(sys)
+    temp = sys.stdout
+    print 'temp = ' + str(temp)
+    sys.stdout = open('log.txt','a')
+    print ('spam')
+    print (1,2,3)
+    sys.stdout.close()
+    sys.stdout = temp
 
-
-void5()
+void6()
 
 
 
