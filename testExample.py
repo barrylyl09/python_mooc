@@ -66,6 +66,24 @@ def void3():
 
 
 
+def void4():
+    a = 1
+    b = 2
+    A, B = a, b
+    c = range(6)
+    print c
+
+def void5():
+    a = b = c = 'spam'
+    print a, b, c
+
+
+
+void5()
+
+
+
+
 
 
 
